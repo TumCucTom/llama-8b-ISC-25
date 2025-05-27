@@ -5,10 +5,12 @@
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=26
 #SBATCH --time=01:00:00
-#SBATCH --output=../out-logs/%x_%j.log
-#SBATCH --error=../out-logs/%x_%j.log
+#SBATCH --output=out-logs/%x_%j.log
+#SBATCH --error=out-logs/%x_%j.log
 #SBATCH --hint=nomultithread
 #SBATCH --exclusive
+
+cd ~/isc25_llm
 
 echo "Running on $(hostname)"
 nvidia-smi
