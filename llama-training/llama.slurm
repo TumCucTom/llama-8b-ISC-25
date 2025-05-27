@@ -19,6 +19,8 @@ lscpu | grep -E '^Socket|^Core|^CPU(s)'
 # Define your project directory
 PROJECT_DIR=$HOME/isc25_llm
 
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
 docker run --rm --gpus all \
   --ipc=host \
   -v $(pwd):/workspace \
@@ -30,5 +32,9 @@ docker run --rm --gpus all \
     huggingface-cli login --token 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 && \ 
     nvidia-smi && \
     lscpu | grep -E '^Socket|^Core|^CPU(s)' && \
-    accelerate launch --config_file accelerate_config.yaml main.py --benchmark accuracy --precision fp8 --device-type cuda
+    accelerate launch --mixed_precision=fp16 --config_file accelerate_config.yaml main.py --benchmark accuracy --precision fp8 --device-type cuda && \
+    # Pruning step: prune the trained model (replace checkpoint path as needed)
+    # python prune_model.py --checkpoint checkpoints/best_model_lora.pt --prune-amount 0.5 --output checkpoints/pruned_model.pt && \
+    # Distillation step: distill a student from the pruned/teacher model (replace checkpoint path as needed)
+    # python distill.py --teacher-checkpoint checkpoints/best_model_lora.pt --output checkpoints/distilled_student.pt
   "
