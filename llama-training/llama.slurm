@@ -32,9 +32,5 @@ docker run --rm --gpus all \
     huggingface-cli login --token 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 && \ 
     nvidia-smi && \
     lscpu | grep -E '^Socket|^Core|^CPU(s)' && \
-    accelerate launch --mixed_precision=fp16 --config_file accelerate_config.yaml main.py --benchmark accuracy --precision fp8 --device-type cuda && \
-    # Pruning step: prune the trained model (replace checkpoint path as needed)
-    # python prune_model.py --checkpoint checkpoints/best_model_lora.pt --prune-amount 0.5 --output checkpoints/pruned_model.pt && \
-    # Distillation step: distill a student from the pruned/teacher model (replace checkpoint path as needed)
-    # python distill.py --teacher-checkpoint checkpoints/best_model_lora.pt --output checkpoints/distilled_student.pt
+    accelerate launch --config_file accelerate_config.yaml main.py --benchmark accuracy --precision fp8 --device-type cuda
   "

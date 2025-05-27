@@ -37,8 +37,8 @@ class CheckpointConfig:
 @dataclass
 class HardwareConfig:
     # Device types: 'cuda' (NVIDIA), 'xpu' (Intel), 'rocm' (AMD), 'cpu'
-    device_type: str = None  # If None, will be auto-detected
-    precision: str = "bf16"  # fp8, bf16, fp16, or fp32
+    device_type: str = "cuda"  # If None, will be auto-detected
+    precision: str = "fp8"  # fp8, bf16, fp16, or fp32
     num_devices: int = None  # If None, will use all available devices
 
     def __post_init__(self):
@@ -82,7 +82,7 @@ class TrainingConfig:
     speed_dataset: str = "cosmos_qa"
     accuracy_dataset: str = "lmms-lab/ScienceQA"
 
-    precision: str = "bf16"  # fp8, bf16, fp16, or fp32
+    precision: str = "fp8"  # fp8, bf16, fp16, or fp32
     batch_size: int = 8
     learning_rate: float = 2e-4
     num_epochs: int = 2
