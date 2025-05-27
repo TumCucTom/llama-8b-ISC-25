@@ -1,0 +1,22 @@
+-------------------- /mnt/opt/nvidia/hpc_sdk/modulefiles ---------------------
+nvhpc-byo-compiler/25.5      nvhpc-hpcx-cuda12/25.5  nvhpc-nompi/25.5  
+nvhpc-hpcx-2.20-cuda12/25.5  nvhpc-hpcx/25.5         nvhpc/25.5        
+
+------------------- /mnt/opt/intel-modules/hpc/2025.1.2.11 -------------------
+advisor/2025.1                dev-utilities/2025.1.0      mkl/2025.1    
+ccl/2021.15.2                 dnnl/3.7.3                  mpi/2021.15   
+compiler-intel-llvm/2025.1.1  dpct/2025.1.0               tbb/2022.1    
+compiler-rt/2025.1.1          dpl/2022.8                  umf/0.10.0    
+compiler/2025.1.1             intel_ipp_intel64/2022.1    vtune/2025.3  
+dal/2025.5                    intel_ippcp_intel64/2025.1  
+debugger/2025.1.1             ishmem/1.3.0                
+
+------------------------------ /mnt/opt/modules ------------------------------
+asagi/1.0.0-intel           libxsmm/1.17-intel  parmetis/4.0.3-intel  
+easi/1.0.0-intel            lua/5.3.6-intel     seissol/1.3.1-intel   
+eigen/3.4.0-intel           miniconda/25.3.1    yaml-cpp/0.6.3-intel  
+gcc/15.1.0                  netcdf/4.9.3-intel  
+hdf5/1.14.6-parallel-intel  openmpi/5.0.7       
+
+----------------------- /usr/share/modules/modulefiles -----------------------
+dot  module-git  module-info  modules  null  use.own  
