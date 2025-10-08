@@ -31,3 +31,7 @@ We evaluated multiple strategies and made the following informed decisions:
 - **Precision: FP8 vs. BF16**: FP8 enabled larger batch sizes and faster execution. Although convergence in FP8 can be less stable in some settings, pairing it with Transformer Engine ensured reliable training.
 
 - **Batch Size & Training Schedule**: Our batch size and gradient accumulation steps were chosen to fit within the 96GB H100 VRAM while maximizing throughput. The step count and epoch configuration provided a good balance between convergence and runtime feasibility within the competition limits.
+
+## Note to readers post compeition
+
+Note all files are in the states they were at final submission. I aim to put them to the correct state in the future.
